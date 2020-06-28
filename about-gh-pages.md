@@ -8,3 +8,6 @@
     — The layout for your landing-page / home-page / index-page.
 - `page.html`
   - The layout for your documents that contain FrontMatter, but are not posts.
+- `post.html`
+  - The layout for your posts
+  
