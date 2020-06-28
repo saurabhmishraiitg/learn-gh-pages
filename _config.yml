@@ -1,7 +1,7 @@
 # Themes are encouraged to use these universal variables
 # so be sure to set them if your theme uses them.
 #
-title : Nexus Site 2
+title : Nexus Site 4
 author :
   name : Saurabh Mishra
   email : saurabhmishra.iitg@gmail.com
@@ -14,4 +14,4 @@ author :
 #minima:
 #  skin: solarized
 theme: jekyll-theme-minimal
-logo: a.png
+logo: logo1.jpg

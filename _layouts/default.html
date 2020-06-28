@@ -37,7 +37,7 @@
                 {%- for path in page_paths -%}
                     {%- assign my_page = site.pages | where: "path", path | first -%}
                     {%- if my_page.title -%}
-                        <li><a class="page-link" title="{{ my_page.name | my_page.dir | escape }}" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
+                        <li><a {% if my_page.url == page.url %}class="active" title="{{ my_page.dir | escape }}{{ my_page.name | escape }}" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
                         <!-- <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>-->
                     {%- endif -%}
                 {%- endfor -%}
@@ -51,8 +51,7 @@
             <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
 
             {% if site.logo %}
-            <a href="https://www.vecteezy.com/free-vector/abstract">Abstract Vectors by Vecteezy</a>
-            <!-- <img src="{{site.logo | relative_url}}" alt="Logo" /> -->
+                <img src="{{site.logo | relative_url}}" alt="Logo" />
             {% endif %}
 
             <p>{{ site.description | default: site.github.project_tagline }}</p>
