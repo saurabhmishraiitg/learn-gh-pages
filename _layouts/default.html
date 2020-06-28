@@ -35,36 +35,23 @@
             <img src="{{site.logo | relative_url}}" alt="Logo" />
             {% endif %}
 
-            <br />
-            <br />
-
             <!-- Index List -->
             {%- assign default_paths = site.pages | map: "path" -%}
             {%- assign page_paths = site.header_pages | default: default_paths -%}
             {%- assign titles_size = site.pages | map: 'title' | join: ' ' | size -%}
             
             <p>
-            <div>
-                <ul>
-                    {%- if titles_size > 0 -%}
-                    {%- for path in page_paths -%}
-                    {%- assign my_page = site.pages | where: "path", path | first -%}
-                    {%- if my_page.title -%}
-                    <!-- <li><a class="page-link" title="{{ my_page.name | escape }}" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li> -->
-                    <li><a class="page-link" title="{{ my_page.dir | escape }}{{ my_page.name | escape }}"
-                            href="{{ my_page.url | relative_url }}">{% if my_page.url == page.url %}
-                            <strong>{{ my_page.title | escape }}</strong> {% else %} {{ my_page.title | escape }} {% endif %}</a>
-                    </li>
-            
-                    {%- endif -%}
-                    {%- endfor -%}
-                    {%- endif -%}
-                </ul>
-            </div>
+            <ul>
+                {%- if titles_size > 0 -%}
+                {%- for path in page_paths -%}
+                {%- assign my_page = site.pages | where: "path", path | first -%}
+                {%- if my_page.title -%}
+                <li><a class="page-link" title="{{ my_page.dir | escape }}{{ my_page.name | escape }}" href="{{ my_page.url | relative_url }}">{% if my_page.url == page.url %} <strong>{{ my_page.title | escape }}</strong> {% else %} {{ my_page.title | escape }} {% endif %}</a></li>
+                {%- endif -%}
+                {%- endfor -%}
+                {%- endif -%}
+            </ul>
             </p>
-
-            <br />
-            <br />
 
             {% if site.github.is_project_page %}
             <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub
