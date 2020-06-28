@@ -26,10 +26,6 @@
         <header>
             <!-- Title of the Jekyll Site -->
             <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
-
-            <!-- <h3>{{ site.github.repository_name }}</h3> -->
-            <h3>{{ site.github.releases }}</h3>
-            <h3>{{ site.github.latest_release }}</h3>
             
             <!--GitHub Project Description -->
             <p>{{ site.description | default: site.github.project_tagline }}</p>
@@ -88,8 +84,6 @@
             {% if site.github.is_project_page %}
             <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
             {% endif %}
-            <p><small>Hosted on GitHub Pages &mdash; Theme by <a
-                        href="https://github.com/orderedlist">orderedlist</a></small></p>
         </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
