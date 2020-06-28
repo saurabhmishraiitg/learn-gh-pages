@@ -9,12 +9,16 @@
     {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
 
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
 
     <style>
-        /* div#nexus-div{height: 50%; width:100%;} */
-        ul#nexus-ul {
+        div#nexus-div {
             height: 50%;
+            width: 100%;
+        }
+
+        ul#nexus-ul {
+            height: 100%;
             width: 100%;
             overflow: hidden;
             overflow-y: scroll;
@@ -22,6 +26,18 @@
 
         /* nav ul{height: 50%; width:100%;} */
         /* nav ul{overflow:hidden; overflow-y:scroll;} */
+
+        #nexus-search {
+            /* background-image: url('searchicon.png'); */
+            /* background-position: 10px 12px; */
+            /* background-repeat: no-repeat; */
+            width: 90%;
+            height: 5%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
     </style>
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -78,7 +94,10 @@
             {%- assign page_paths = site.header_pages | default: default_paths -%}
             {%- assign titles_size = site.pages | map: 'title' | join: ' ' | size -%}
 
-            <div>
+            <input type="text" id="nexus-search" onkeyup="myFunction()" placeholder="Search for Page..."
+                title="Type in a Page Name">
+
+            <div id="nexus-div">
                 <ul id="nexus-ul">
                     {%- if titles_size > 0 -%}
                     {%- for path in page_paths -%}
@@ -94,9 +113,31 @@
                 </ul>
             </div>
 
-            {% if site.github.is_project_page %}
-            <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
-            {% endif %}
+            <script>
+                function myFunction() {
+                    var input, filter, ul, li, a, i, txtValue;
+                    input = document.getElementById("nexus-search");
+                    filter = input.value.toUpperCase();
+                    ul = document.getElementById("nexus-ul");
+                    li = ul.getElementsByTagName("li");
+                    for (i = 0; i < li.length; i++) {
+                        a = li[i].getElementsByTagName("a")[0];
+                        txtValue = a.textContent || a.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            li[i].style.display = "";
+                        } else {
+                            li[i].style.display = "none";
+                        }
+                    }
+                }
+            </script>
+
+            <div style="padding-top: 10%;">
+                {% if site.github.is_project_page %}
+                <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>
+                </p>
+                {% endif %}
+            </div>
         </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
