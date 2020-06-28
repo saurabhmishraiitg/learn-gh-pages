@@ -35,6 +35,9 @@
             <img src="{{site.logo | relative_url}}" alt="Logo" />
             {% endif %}
 
+            <br />
+            <br />
+
             <!-- Index List -->
             {%- assign default_paths = site.pages | map: "path" -%}
             {%- assign page_paths = site.header_pages | default: default_paths -%}
@@ -60,7 +63,7 @@
 
             <br />
             <br />
-            
+
             {% if site.github.is_project_page %}
             <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub
                     <small>{{ site.github.repository_nwo }}</small></a></p>
