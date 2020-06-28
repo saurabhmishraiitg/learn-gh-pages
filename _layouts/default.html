@@ -47,7 +47,7 @@
             {%- assign page_paths = site.header_pages | default: default_paths -%}
             {%- assign titles_size = site.pages | map: 'title' | join: ' ' | size -%}
             
-            <nav>
+            
                 <ul id="index-list">
                 {%- if titles_size > 0 -%}
                 {%- for path in page_paths -%}
@@ -58,7 +58,7 @@
                 {%- endfor -%}
                 {%- endif -%}
                 </ul>
-            </nav>
+            
 
             {% if site.github.is_project_page %}
             <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub
