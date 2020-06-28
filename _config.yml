@@ -15,5 +15,4 @@ author :
 #minima:
 #  skin: solarized
 
-#theme: jekyll-theme-minimal
-theme: minima
+theme: jekyll-theme-minimal
