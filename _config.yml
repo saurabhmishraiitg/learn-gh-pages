@@ -7,7 +7,7 @@ author :
   email : saurabhmishra.iitg@gmail.com
   github : saurabhmishraiitg
 
-  #theme: minima
+#theme: minima
 #show_excerpts: true
 #header_pages:
 #  - about.md
@@ -16,4 +16,3 @@ author :
 #  skin: solarized
 
 theme: jekyll-theme-minimal
-#logo: logo1.jpg
