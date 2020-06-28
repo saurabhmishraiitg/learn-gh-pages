@@ -6,12 +6,14 @@ author :
   name : Saurabh Mishra
   email : saurabhmishra.iitg@gmail.com
   github : saurabhmishraiitg
-#theme: minima
+
+  #theme: minima
 #show_excerpts: true
 #header_pages:
 #  - about.md
 #  - portfolio.md
 #minima:
 #  skin: solarized
+
 theme: jekyll-theme-minimal
 #logo: logo1.jpg
