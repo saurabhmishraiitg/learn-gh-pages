@@ -15,6 +15,21 @@
 
 <body>
     <div class="wrapper">
+        {%- assign nexus_default_paths = site.pages | map: "path" | join: ' | ' -%}
+        {%- assign nexus_page_paths = site.header_pages | map: "path" | join: ' @ ' | default: nexus_default_paths -%}
+        {%- assign nexus_default_posts = site.posts | map: "path" | join: ' | ' -%}
+        
+        <h3>Nexus Default Posts "{{nexus_default_posts}}"</h3>
+        <h3>Nexus Default Paths "{{nexus_default_paths}}"</h3>
+        <h3>Nexus Page Paths "{{nexus_default_paths}}"</h3>
+        
+        {%- assign default_paths = site.pages | map: "path" -%}
+        {%- assign page_paths = site.header_pages | default: default_paths -%}
+        {%- assign titles_size = site.pages | map: 'title' | join: ' ' | size -%}
+        
+        <h3>Header 01</h3>
+
+
         <header>
             <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
 
