@@ -30,25 +30,6 @@
         <!-- <h3>Nexus Default Paths "{{nexus_default_paths}}"</h3> -->
         <!-- <h3>Nexus Page Paths "{{nexus_default_paths}}"</h3> -->
 
-        <!-- Index List -->
-        {%- assign default_paths = site.pages | map: "path" -%}
-        {%- assign page_paths = site.header_pages | default: default_paths -%}
-        {%- assign titles_size = site.pages | map: 'title' | join: ' ' | size -%}
-        
-        
-        <ul id="index-list">
-            {%- if titles_size > 0 -%}
-            {%- for path in page_paths -%}
-            {%- assign my_page = site.pages | where: "path", path | first -%}
-            {%- if my_page.title -%}
-            <li><a class="page-link" title="{{ my_page.dir | escape }}{{ my_page.name | escape }}"
-                    href="{{ my_page.url | relative_url }}">{% if my_page.url == page.url %}
-                    <strong>{{ my_page.title | escape }}</strong> {% else %} {{ my_page.title | escape }} {% endif %}</a></li>
-            {%- endif -%}
-            {%- endfor -%}
-            {%- endif -%}
-        </ul>
-
         <header>
             <!-- Title of the Jekyll Site -->
             <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
@@ -84,6 +65,25 @@
 
         </section>
         <footer>
+            <!-- Index List -->
+            {%- assign default_paths = site.pages | map: "path" -%}
+            {%- assign page_paths = site.header_pages | default: default_paths -%}
+            {%- assign titles_size = site.pages | map: 'title' | join: ' ' | size -%}
+            
+            
+            <ul id="index-list">
+                {%- if titles_size > 0 -%}
+                {%- for path in page_paths -%}
+                {%- assign my_page = site.pages | where: "path", path | first -%}
+                {%- if my_page.title -%}
+                <li><a class="page-link" title="{{ my_page.dir | escape }}{{ my_page.name | escape }}"
+                        href="{{ my_page.url | relative_url }}">{% if my_page.url == page.url %}
+                        <strong>{{ my_page.title | escape }}</strong> {% else %} {{ my_page.title | escape }} {% endif %}</a></li>
+                {%- endif -%}
+                {%- endfor -%}
+                {%- endif -%}
+            </ul>
+
             {% if site.github.is_project_page %}
             <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
             {% endif %}
