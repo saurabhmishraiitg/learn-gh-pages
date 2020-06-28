@@ -15,12 +15,13 @@
 
 <body>
     <div class="wrapper">
+        {%- assign nexus_default_paths = site.pages | map: "path" | join: ' | ' -%}
+        {%- assign nexus_page_paths = site.header_pages | map: "path" | join: ' @ ' | default: nexus_default_paths -%}
+        <h3>Nexus Default Paths "{{nexus_default_paths}}"</h3>
+        <h3>Nexus Page Paths "{{nexus_default_paths}}"</h3>
 
         {%- assign default_paths = site.pages | map: "path" -%}
-        {%- assign nexus_paths = site.pages | map: "path" | join: ' | ' -%}
-        <h3>Nexus Paths "{{nexus_paths}}"</h3>
         {%- assign page_paths = site.header_pages | default: default_paths -%}
-        <h3>Page Paths "{{page_paths}}"</h3>
         {%- assign titles_size = site.pages | map: 'title' | join: ' ' | size -%}
         <h3>Title Sizes "{{titles_size}}"</h3>
         <h3>Header 04</h3>
