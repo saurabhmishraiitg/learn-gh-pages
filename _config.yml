@@ -22,8 +22,8 @@ author :
 #  - README.md
 theme: minima
 #show_excerpts: true
-#header_pages:
-#  - about.md
-#  - portfolio.md
+header_pages:
+  - about.md
+  - portfolio.md
 minima:
-  skin: dark
+  skin: solarized
