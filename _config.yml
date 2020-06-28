@@ -6,22 +6,11 @@ author :
   name : Saurabh Mishra
   email : saurabhmishra.iitg@gmail.com
   github : saurabhmishraiitg
-#markdown: kramdown
-#plugins:
-#  - jekyll-relative-links
-#  - jekyll-readme-index
-#relative_links:
-#  enabled: true
-#  collections: true
-#readme_index:
-#  enabled:          true
-#  remove_originals: false
-#  with_frontmatter: false
-theme: minima
-show_excerpts: true
+#theme: minima
+#show_excerpts: true
 #header_pages:
 #  - about.md
 #  - portfolio.md
-minima:
-  skin: solarized
-#theme: jekyll-theme-minimal
+#minima:
+#  skin: solarized
+theme: jekyll-theme-minimal
