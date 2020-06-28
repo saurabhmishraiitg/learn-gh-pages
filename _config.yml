@@ -1,1 +1,29 @@
-theme: jekyll-theme-minimal
+# Themes are encouraged to use these universal variables
+# so be sure to set them if your theme uses them.
+#
+title : Nexus Site 2
+author :
+  name : Saurabh Mishra
+  email : saurabhmishra.iitg@gmail.com
+  github : saurabhmishraiitg
+#markdown: kramdown
+#plugins:
+#  - jekyll-relative-links
+#  - jekyll-readme-index
+#relative_links:
+#  enabled: true
+#  collections: true
+#readme_index:
+#  enabled:          true
+#  remove_originals: false
+#  with_frontmatter: false
+#include:
+#  - CONTRIBUTING.md
+#  - README.md
+theme: minima
+#show_excerpts: true
+#header_pages:
+#  - about.md
+#  - portfolio.md
+minima:
+  skin: dark

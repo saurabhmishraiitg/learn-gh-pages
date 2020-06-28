@@ -1,0 +1,19 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <h3>Head 01</h3>
+    {%- seo -%}
+    <h3>Head 02</h3>
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    <h3>Head 03</h3>
+    {%- feed_meta -%}
+    <h3>Head 04</h3>
+    {%- if jekyll.environment == 'production' and site.google_analytics -%}
+    <h3>Head 05</h3>
+    {%- include google-analytics.html -%}
+    {%- endif -%}
+    <h3>Head 06</h3>
+    <!--{%- include custom-head.html -%}-->
+
+</head>
