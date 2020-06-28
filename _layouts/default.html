@@ -43,6 +43,7 @@
             {%- assign page_paths = site.header_pages | default: default_paths -%}
             {%- assign titles_size = site.pages | map: 'title' | join: ' ' | size -%}
             
+            <p>
             <div>
                 <ul>
                     {%- if titles_size > 0 -%}
@@ -60,6 +61,7 @@
                     {%- endif -%}
                 </ul>
             </div>
+            </p>
 
             <br />
             <br />
