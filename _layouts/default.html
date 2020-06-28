@@ -17,10 +17,11 @@
     <div class="wrapper">
 
         {%- assign default_paths = site.pages | map: "path" -%}
-        <h3>Default Paths "{{default_paths}}"</h3>
+        {%- assign nexus_paths = site.pages | map: "path" | join: ' | ' -%}
+        <h3>Nexus Paths "{{nexus_paths}}"</h3>
         {%- assign page_paths = site.header_pages | default: default_paths -%}
         <h3>Page Paths "{{page_paths}}"</h3>
-        {%- assign titles_size = site.pages | map: 'title' | join: 'xx' | size -%}
+        {%- assign titles_size = site.pages | map: 'title' | join: ' ' | size -%}
         <h3>Title Sizes "{{titles_size}}"</h3>
         <h3>Header 04</h3>
         <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
