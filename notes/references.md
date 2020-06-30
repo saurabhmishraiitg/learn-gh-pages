@@ -9,6 +9,7 @@ Pages/Tutorials referred while working on this experiment of GitHub Pages
 - [Jekyll Variables](https://jekyllrb.com/docs/variables/)
 - [Nive Favicons](https://icons8.com/icons/set/favicon)
 - [Tempalate for Minimal Mistake Theme](https://github.com/mmistakes/mm-github-pages-starter)
+- [Minimal Mistakes Quickstart Guide](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/)
 
 ## Pending To Read
 
